@@ -5,13 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sakhi - One private companion for every stage of a woman's health</title>
   
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- Google Font: Plus Jakarta Sans, Noto Sans Devanagari & Noto Sans Kannada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:wght@500;600;700&display=swap" rel="stylesheet">
@@ -64,7 +60,6 @@
 <body class="min-h-screen flex flex-col antialiased selection:bg-rose-200">
 
 
-  <!-- TOP DISCLAIMER BAR -->
   <div class="bg-rose-900 text-rose-100 px-4 py-2 text-xs md:text-sm text-center font-medium flex items-center justify-center gap-2 shadow-sm">
     <i data-lucide="shield-alert" class="w-4 h-4 text-rose-300"></i>
     <span id="txt-disclaimer-banner">Medical Disclaimer: Sakhi provides WHO/ICMR grounded health info. It is NOT a substitute for professional doctor diagnosis.</span>
@@ -72,12 +67,10 @@
   </div>
 
 
-  <!-- HEADER & NAVIGATION -->
   <header class="sticky top-0 z-40 bg-white/70 backdrop-blur-md border-b border-rose-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
         
-        <!-- LOGO & BRAND -->
         <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('ask-sakhi')">
           <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-rose-800 p-0.5 shadow-md flex items-center justify-center">
             <div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
@@ -93,10 +86,8 @@
         </div>
 
 
-        <!-- STAGE SELECTOR & CONTROLS -->
         <div class="flex items-center gap-2 sm:gap-4">
           
-          <!-- Life Stage Dropdown -->
           <div class="relative">
             <select id="stage-select" onchange="changeLifeStage(this.value)" class="bg-slate-50 border border-slate-200 text-slate-700 text-xs sm:text-sm rounded-xl px-3 py-2 font-medium focus:ring-2 focus:ring-rose-400 focus:outline-none cursor-pointer">
               <option value="cycle">🌸 Cycle & Reproductive Years</option>
@@ -106,7 +97,6 @@
           </div>
 
 
-          <!-- Language Selector Dropdown -->
           <div class="flex items-center gap-1 bg-rose-50 border border-rose-200 rounded-xl px-2 py-1">
             <i data-lucide="globe" class="w-4 h-4 text-rose-700"></i>
             <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-transparent text-rose-700 font-semibold text-xs sm:text-sm focus:outline-none cursor-pointer">
@@ -117,7 +107,6 @@
           </div>
 
 
-          <!-- Privacy Badge -->
           <div class="hidden md:flex items-center gap-1 text-xs text-teal-700 bg-teal-50 px-2.5 py-1.5 rounded-lg font-medium border border-teal-200" title="All data stays on device in LocalStorage">
             <i data-lucide="lock" class="w-3.5 h-3.5"></i>
             <span>100% On-Device Anonymous</span>
@@ -128,8 +117,6 @@
       </div>
     </div>
 
-
-    <!-- MAIN NAVIGATION TABS (NO MODULE PREFIXES) -->
     <nav class="bg-slate-50/80 border-t border-slate-100 overflow-x-auto no-scrollbar">
       <div class="max-w-7xl mx-auto px-4 flex gap-1 sm:gap-2 py-2">
         <button id="nav-ask-sakhi" onclick="switchTab('ask-sakhi')" class="nav-tab text-xs sm:text-sm font-semibold px-4 py-2 rounded-xl flex items-center gap-2 transition whitespace-nowrap bg-rose-600 text-white shadow-sm">
@@ -165,11 +152,9 @@
   </header>
 
 
-  <!-- MAIN CONTENT CONTAINER -->
   <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
 
-    <!-- ACTIVE LIFE STAGE BANNER -->
     <div id="life-stage-banner" class="mb-6 bg-rose-800 rounded-2xl p-4 sm:p-6 text-white shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
       <div>
         <div class="flex items-center gap-2">
@@ -186,19 +171,15 @@
     </div>
 
 
-    <!-- ========================================================================= -->
-    <!-- ASK SAKHI -->
-    <!-- ========================================================================= -->
+  
     <section id="sec-ask-sakhi" class="tab-content block space-y-6">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <!-- LEFT 2 COLUMNS: CHATBOT INTERFACE -->
         <div class="lg:col-span-2 bg-white rounded-2xl border border-rose-100 card-shadow flex flex-col h-[640px]">
-          <!-- Chat Header -->
           <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-rose-50/50 rounded-t-2xl">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-full bg-rose-600 text-white flex items-center justify-center font-bold text-lg shadow">
-                स
+                
               </div>
               <div>
                 <h3 class="font-bold text-slate-800 flex items-center gap-2">
@@ -214,11 +195,9 @@
           </div>
 
 
-          <!-- Chat Messages Scroll Area -->
           <div id="chat-messages" class="flex-grow p-4 overflow-y-auto space-y-4 bg-slate-50/30"></div>
 
 
-          <!-- Suggested Quick Prompts -->
           <div class="p-2 border-t border-slate-100 bg-white flex gap-2 overflow-x-auto no-scrollbar">
             <button onclick="sendQuickPrompt('Is missing a period normal during stress?')" class="text-xs bg-rose-50 text-rose-700 hover:bg-rose-100 px-3 py-1.5 rounded-full font-medium whitespace-nowrap border border-rose-100">
               🌸 Stress & Period Delay
@@ -232,7 +211,6 @@
           </div>
 
 
-          <!-- Chat Input Area -->
           <div class="p-3 border-t border-slate-200 bg-white rounded-b-2xl flex items-center gap-2">
             <button id="voice-btn" onclick="toggleVoiceInput()" class="p-3 text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition flex-shrink-0" title="Voice Input (Hindi/Kannada/English)">
               <i data-lucide="mic" class="w-5 h-5"></i>
@@ -245,10 +223,8 @@
         </div>
 
 
-        <!-- RIGHT 1 COLUMN: EXPANDED MYTH BUSTERS & CLINIC FINDER -->
         <div class="space-y-6">
           
-          <!-- MYTH VS FACT CARDS (EXPANDED LIST) -->
           <div class="bg-white rounded-2xl border border-slate-100 p-5 card-shadow">
             <div class="flex items-center justify-between mb-4">
               <h3 class="font-bold text-slate-800 flex items-center gap-2">
@@ -259,12 +235,10 @@
             </div>
 
 
-            <!-- Interactive Flip Cards Container -->
             <div id="myth-cards-container" class="space-y-4 max-h-[380px] overflow-y-auto pr-1"></div>
           </div>
 
 
-          <!-- NEAREST CLINIC & TELEHEALTH FINDER -->
           <div class="bg-white rounded-2xl border border-slate-100 p-5 card-shadow">
             <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-3">
               <i data-lucide="map-pin" class="w-5 h-5 text-teal-600"></i>
@@ -295,16 +269,10 @@
       </div>
     </section>
 
-
-    <!-- ========================================================================= -->
-    <!-- CYCLE & MIND (UPDATED WITH 3-MONTH RETENTION & REAL SUMMARY) -->
-    <!-- ========================================================================= -->
     <section id="sec-cycle-mind" class="tab-content hidden space-y-6">
       
-      <!-- TOP STATUS & CALCULATOR CARD -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- PERIOD DATE & CALCULATED PHASE -->
         <div class="bg-white p-5 rounded-2xl border border-rose-100 card-shadow">
           <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-3">
             <i data-lucide="calendar" class="w-5 h-5 text-rose-600"></i>
@@ -324,7 +292,6 @@
               <label class="text-xs font-medium text-slate-600">Usual Period Length (Days):</label>
               <input type="number" id="period-length" value="5" min="2" max="10" oninput="calculateCyclePhase()" class="w-full mt-1 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold">
             </div>
-            <!-- Result Box -->
             <div id="cycle-phase-result" class="p-3 bg-rose-50 border border-rose-200 rounded-xl text-center">
               <span class="text-xs font-bold text-rose-600 uppercase tracking-wider block">CURRENT ESTIMATED PHASE</span>
               <span id="txt-current-phase" class="text-lg font-extrabold text-rose-800">Follicular Phase (Day 8)</span>
@@ -334,8 +301,6 @@
           </div>
         </div>
 
-
-        <!-- 30-SEC DAILY CHECK-IN -->
         <div class="md:col-span-2 space-y-6"><div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow">
           <h3 class="font-bold text-slate-800 flex items-center gap-2 mb-1">
             <i data-lucide="activity" class="w-5 h-5 text-purple-600"></i>
@@ -345,7 +310,6 @@
 
 
           <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
-            <!-- Mood -->
             <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
               <label class="text-xs font-bold text-slate-700 block mb-1">Mood</label>
               <select id="log-mood" class="w-full border border-slate-200 rounded-lg p-1.5 text-xs font-semibold">
@@ -356,7 +320,6 @@
                 <option value="1">😫 Low / Irritable</option>
               </select>
             </div>
-            <!-- Sleep -->
             <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
               <label class="text-xs font-bold text-slate-700 block mb-1">Sleep</label>
               <select id="log-sleep" class="w-full border border-slate-200 rounded-lg p-1.5 text-xs font-semibold">
@@ -365,7 +328,6 @@
                 <option value="1">🥱 Poor (&lt;5h)</option>
               </select>
             </div>
-            <!-- Stress -->
             <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
               <label class="text-xs font-bold text-slate-700 block mb-1">Stress</label>
               <select id="log-stress" class="w-full border border-slate-200 rounded-lg p-1.5 text-xs font-semibold">
@@ -374,7 +336,6 @@
                 <option value="5">🚨 High</option>
               </select>
             </div>
-            <!-- Energy -->
             <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
               <label class="text-xs font-bold text-slate-700 block mb-1">Energy</label>
               <select id="log-energy" class="w-full border border-slate-200 rounded-lg p-1.5 text-xs font-semibold">
@@ -383,7 +344,6 @@
                 <option value="1">🪫 Exhausted</option>
               </select>
             </div>
-            <!-- Pain -->
             <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center col-span-2 sm:col-span-1">
               <label class="text-xs font-bold text-slate-700 block mb-1">Cramps / Pain</label>
               <select id="log-pain" class="w-full border border-slate-200 rounded-lg p-1.5 text-xs font-semibold">
@@ -404,8 +364,6 @@
         </div>
 
 
-
-          <!-- DYNAMIC CHART -->
           <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow">
             <div class="flex items-center justify-between mb-4">
               <div>
@@ -421,14 +379,10 @@
         </div>
       </div>
 
-
-      <!-- REAL-TIME LOGGED SUMMARY CARD & CHART -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <!-- REAL DYNAMIC CHART & SUMMARY METRICS -->
         <div class="lg:col-span-2 space-y-4">
-          
-          <!-- 30/90-DAY METRIC SUMMARY CARDS -->
+
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div class="bg-rose-50 border border-rose-100 p-3 rounded-2xl text-center">
               <span class="text-[10px] uppercase font-extrabold text-rose-600 tracking-wider">Total Check-ins</span>
@@ -453,9 +407,8 @@
           </div>
 
 
-          <!-- CALENDAR -->
           <div class="rounded-[28px] p-4 sm:p-5 card-shadow border" style="background:linear-gradient(160deg,rgba(246,138,216,.28),rgba(255,159,140,.22) 45%,rgba(217,208,255,.35))">
-            <div class="flex items-center justify-between">
+            <div class=" flex items-center justify-between">
               <h3 class="text-3xl font-bold text-slate-900">Calendar</h3>
               <div class="flex items-center gap-1 bg-white rounded-full px-1 py-1 text-xs font-bold">
                 <button onclick="calNav(-1)" class="w-7 h-7 rounded-full hover:bg-slate-100" aria-label="Previous month">‹</button>
@@ -475,7 +428,6 @@
             </div>
           </div>
 
-          <!-- QUICK LOG, CYCLE HISTORY, RECENT ENTRIES -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-4">
               <h3 class="text-xl font-bold">Quick Log</h3>
@@ -498,11 +450,8 @@
 
         </div>
 
-
-        <!-- PMDD & POSTPARTUM RISK ALERTS -->
         <div class="space-y-4">
           
-          <!-- PMDD ALERT CARD WITH INTERACTIVE GUIDELINE MODAL TRIGGER -->
           <div id="pmdd-alert-card" class="bg-amber-50 border border-amber-200 p-4 rounded-2xl">
             <div class="flex items-start gap-3">
               <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5"></i>
@@ -517,7 +466,6 @@
           </div>
 
 
-          <!-- POSTPARTUM MOOD SCREENER (10 questions, scored) -->
           <div class="bg-white border border-rose-100 p-4 rounded-2xl card-shadow">
             <h4 class="font-bold text-slate-800 text-sm flex items-center gap-2">
               <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i>
@@ -543,13 +491,8 @@
     
 </section>
 
-
-    <!-- ========================================================================= -->
-    <!-- MOTHER WATCH (FULLY DYNAMIC & REAL MULTI-PATIENT LOGGING) -->
-    <!-- ========================================================================= -->
     <section id="sec-mother-watch" class="tab-content hidden space-y-6">
       
-      <!-- HEALTH WORKER MODE TOGGLE & PATIENT SELECTOR -->
       <div class="bg-teal-50 border border-teal-200 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-3">
           <div class="p-2.5 bg-teal-600 text-white rounded-xl">
@@ -563,7 +506,6 @@
         
         <div class="flex items-center gap-2 w-full sm:w-auto">
           <select id="patient-select" onchange="switchPatientProfile(this.value)" class="bg-white border border-teal-300 text-slate-800 text-xs font-bold rounded-xl px-3 py-2 focus:ring-2 focus:ring-teal-500">
-            <!-- Dynamically populated -->
           </select>
           <button onclick="addNewPatientPrompt()" class="bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold px-3 py-2 rounded-xl whitespace-nowrap shadow-sm">
             + New Patient Profile
@@ -571,8 +513,6 @@
         </div>
       </div>
 
-
-      <!-- PREGNANCY WEEK CALCULATOR -->
       <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow">
         <h3 class="font-bold text-slate-800 mb-3">Pregnancy Week Calculator</h3>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -587,10 +527,8 @@
 
       <div id="appt-alert-top"></div>
 
-      <!-- PREGNANCY PROFILE & RISK STATUS ENGINE -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <!-- LEFT: DUE DATE & VITAL LOGGERS -->
         <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow space-y-4">
           <div class="flex justify-between items-center">
             <h3 class="font-bold text-slate-800 flex items-center gap-2">
@@ -609,8 +547,6 @@
             </div>
           </div>
 
-
-          <!-- Vital Inputs -->
           <div class="space-y-3 pt-2 border-t border-slate-100">
             <div class="grid grid-cols-2 gap-2">
               <div>
@@ -629,8 +565,6 @@
               <input type="number" id="vital-weight" placeholder="e.g. 62.5" step="0.5" class="w-full border border-slate-200 rounded-xl p-2 text-xs font-semibold">
             </div>
 
-
-            <!-- Warning Checkboxes -->
             <div class="space-y-1.5 pt-2">
               <span class="text-xs font-bold text-slate-700 block">Symptom Check:</span>
               <label class="flex items-center gap-2 text-xs text-slate-700 cursor-pointer">
@@ -658,8 +592,6 @@
           </div>
         </div>
 
-
-        <!-- RIGHT: TRI-COLOR RISK STATUS DISPLAY -->
         <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-100 card-shadow flex flex-col justify-between">
           <div>
             <h3 class="font-bold text-slate-800 text-lg flex items-center justify-between">
@@ -667,8 +599,6 @@
               <span class="text-xs font-normal text-slate-400">WHO / ICMR Triage Protocol</span>
             </h3>
 
-
-            <!-- STATUS BOX ENGINE -->
             <div id="risk-status-card" class="mt-4 p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-300 transition-all">
               <div class="flex items-start gap-4">
                 <div id="risk-status-icon" class="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-2xl flex-shrink-0">
@@ -684,8 +614,6 @@
               </div>
             </div>
 
-
-            <!-- RED FLAG RULES RECAP -->
             <div class="mt-6 bg-slate-50 p-4 rounded-xl border border-slate-200">
               <h4 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2">Clinical Warning Thresholds:</h4>
               <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
@@ -696,8 +624,6 @@
             </div>
           </div>
 
-
-          <!-- APPOINTMENT & TEST REMINDERS -->
           <div class="mt-6 border-t border-slate-100 pt-4">
             <h4 class="font-bold text-slate-800 text-xs mb-2">Trimester Clinical Milestones:</h4>
             <div class="grid grid-cols-3 gap-2 text-center text-xs">
@@ -719,9 +645,6 @@
 
       </div>
 
-
-    
-      <!-- EMERGENCY GUIDANCE -->
       <div class="bg-red-50 border-2 border-red-400 rounded-2xl p-5">
         <h3 class="text-lg font-extrabold text-red-800">🚨 Warning signs: do not wait</h3>
         <p class="text-sm font-semibold text-red-900 mt-1">इनमें से कोई भी लक्षण हो तो तुरंत अस्पताल जाएं या 108 पर कॉल करें।</p>
@@ -740,7 +663,6 @@
         </div>
       </div>
 
-      <!-- READINGS HISTORY FOR ACTIVE PATIENT -->
       <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow">
         <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
           <h3 class="font-bold text-slate-800">Readings for <span id="mw-name">Self Profile</span></h3>
@@ -752,14 +674,11 @@
         <div id="mw-history" class="overflow-x-auto"></div>
       </div>
 
-    
-      <!-- CHARTS -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow"><h3 class="font-bold text-slate-800 mb-2">Blood pressure history</h3><p id="bp-empty" class="text-xs text-slate-500 hidden">Save at least one reading to see the chart.</p><div class="relative h-56"><canvas id="mw-bp-chart"></canvas></div></div>
         <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow"><h3 class="font-bold text-slate-800 mb-2">Weight history</h3><p id="wt-empty" class="text-xs text-slate-500 hidden">Save a reading with weight to see the chart.</p><div class="relative h-56"><canvas id="mw-wt-chart"></canvas></div></div>
       </div>
 
-      <!-- APPOINTMENTS + TESTS -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow space-y-3">
           <h3 class="font-bold text-slate-800">Antenatal appointments &amp; reminders</h3>
@@ -787,14 +706,10 @@
     </section>
 
 
-    <!-- ========================================================================= -->
-    <!-- CHANGE COMPANION (PERIMENOPAUSE & MENOPAUSE - FULLY INTERACTIVE) -->
-    <!-- ========================================================================= -->
     <section id="sec-change-companion" class="tab-content hidden space-y-6">
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <!-- HOT FLASH & SYMPTOM LOGGERS -->
         <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow space-y-4">
           <h3 class="font-bold text-slate-800 flex items-center gap-2">
             <i data-lucide="flame" class="w-5 h-5 text-orange-500"></i>
@@ -850,11 +765,8 @@
           </div>
         </div>
 
-
-        <!-- DYNAMIC SYMPTOM PATTERN CARDS & SCREENING CHECKLIST -->
         <div class="lg:col-span-2 space-y-6">
           
-          <!-- PATTERN CARD (DYNAMICALLY UPDATED) -->
           <div id="meno-pattern-card" class="bg-rose-800 border border-purple-200 p-5 rounded-2xl">
             <div class="flex items-start gap-3">
               <i data-lucide="sparkles" class="w-6 h-6 text-purple-600 flex-shrink-0 mt-0.5"></i>
@@ -872,7 +784,6 @@
           </div>
 
 
-          <!-- AGE-BASED SCREENING CHECKLIST (INTERACTIVE PROGRESS) -->
           <div class="bg-white p-5 rounded-2xl border border-slate-100 card-shadow">
             <div class="flex justify-between items-center mb-3">
               <h3 class="font-bold text-slate-800 flex items-center gap-2">
@@ -922,9 +833,6 @@
     </section>
 
 
-    <!-- ========================================================================= -->
-    <!-- DOCTOR VISIT SUMMARY (LIVE DYNAMIC REPORT WITH SELF-EDITABLE NOTES) -->
-    <!-- ========================================================================= -->
     <section id="sec-doctor-summary" class="tab-content hidden space-y-6">
       
       <div class="flex justify-between items-center">
@@ -938,11 +846,8 @@
         </button></div>
       </div>
 
-
-      <!-- PRINTABLE SUMMARY CONTAINER -->
       <div id="printable-area" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 card-shadow space-y-6 max-w-4xl mx-auto">
         
-        <!-- Header -->
         <div class="border-b border-slate-200 pb-4 flex justify-between items-start">
           <div>
             <h1 class="text-2xl font-extrabold text-rose-700">Sakhi Patient Health Log</h1>
@@ -954,8 +859,6 @@
           </div>
         </div>
 
-
-        <!-- Life Stage & Active Profile -->
         <div class="grid grid-cols-2 gap-4 text-xs bg-slate-50 p-4 rounded-xl">
           <div>
             <span class="font-bold text-slate-700 block">Current Life Stage:</span>
@@ -967,8 +870,6 @@
           </div>
         </div>
 
-
-        <!-- Logged Vitals & Symptoms Summary Grid -->
         <div>
           <h3 class="font-bold text-slate-800 text-sm mb-2 border-b border-slate-100 pb-1">1. Vitals & Logged Metrics</h3>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
@@ -991,8 +892,6 @@
           </div>
         </div>
 
-
-        <!-- Red Flag Safety & Risk Status -->
         <div>
           <h3 class="font-bold text-slate-800 text-sm mb-2 border-b border-slate-100 pb-1">2. Risk Triage Status</h3>
           <div id="doc-risk-badge" class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 font-semibold">
@@ -1003,7 +902,6 @@
 
         <div id="doc-patient-detail"></div>
 
-        <!-- SELF UPDATABLE NOTES SECTION -->
         <div>
           <h3 class="font-bold text-slate-800 text-sm mb-2 border-b border-slate-100 pb-1 flex justify-between items-center">
             <span>3. Patient Notes & Questions for Doctor</span>
@@ -1013,7 +911,6 @@
         </div>
 
 
-        <!-- Suggested Questions to Ask Doctor -->
         <div>
           <h3 class="font-bold text-slate-800 text-sm mb-2 border-b border-slate-100 pb-1">4. Standard Clinical Discussion Questions</h3>
           <ul class="text-xs text-slate-700 space-y-1.5 list-disc pl-5">
@@ -1023,8 +920,6 @@
           </ul>
         </div>
 
-
-        <!-- Footer Notes -->
         <div class="border-t border-slate-200 pt-3 text-[10px] text-slate-400 text-center">
           Generated via Sakhi Women's Health Companion • Patient self-report tool for clinical discussion support.
         </div>
@@ -1039,7 +934,6 @@
   </main>
 
 
-  <!-- INTERACTIVE PMDD CLINICAL GUIDANCE MODAL -->
   <div id="modal-pmdd" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-amber-200 space-y-4 max-h-[90vh] overflow-y-auto">
       <div class="flex items-center justify-between border-b border-slate-100 pb-3">
@@ -1086,7 +980,6 @@
   </div>
 
 
-  <!-- EMERGENCY RED FLAG MODAL -->
   <div id="modal-emergency" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border-2 border-red-500 space-y-4">
       <div class="flex items-center justify-between border-b border-slate-100 pb-3">
@@ -1121,8 +1014,6 @@
     </div>
   </div>
 
-
-  <!-- LIFE STAGE SELECTOR MODAL -->
   <div id="modal-stage" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-xl border border-rose-100 space-y-4">
       <div class="flex items-center justify-between border-b border-slate-100 pb-3">
@@ -1164,12 +1055,9 @@
   </div>
 
 
-  <!-- JAVASCRIPT LOGIC ENGINE -->
   <script>
-    // =========================================================================
-    // STATE MANAGEMENT & DICTIONARIES
-    // =========================================================================
-    let currentLang = 'en'; // 'en', 'hi', or 'kn'
+   
+    let currentLang = 'en'; 
     let currentStage = 'cycle'; 
     let activePatientId = 'default';
     let hotFlashCount = 0;
@@ -1178,13 +1066,11 @@
     let screeningStatus = { mammogram: false, pap: false, dexa: false };
 
 
-    // MULTI-PATIENT IN-MEMORY / STORAGE MAP FOR MOTHER WATCH
     let patientProfiles = {
       'default': { name: 'Self Profile', edd: '', sys: '', dia: '', weight: '', headache: false, vision: false, swelling: false, movement: false }
     };
 
 
-    // GROUNDED KNOWLEDGE BASE WITH ENGLISH, HINDI, AND KANNADA
     const kbData = [
       {
         keywords: ['stress', 'delay', 'late', 'missed', 'period', 'irregular', 'तनाव', 'विलंब', 'ಆತಂಕ', 'ತಡ'],
@@ -1217,7 +1103,6 @@
     ];
 
 
-    // EXPANDED MYTH VS FACT CARDS (8 CARDS)
     const mythCards = [
       {
         myth_en: "Myth: You shouldn't wash your hair or bathe during your period.",
@@ -1286,7 +1171,6 @@
     ];
 
 
-    // CLINICS DATA
     const clinicData = [
       { name: "AIIMS Women's Wellness & ANC Clinic", loc: "delhi", type: "Government Hospital", contact: "011-26588500" },
       { name: "KEM Maternal & Reproductive Care", loc: "mumbai", type: "Public Healthcare", contact: "022-24107000" },
@@ -1295,7 +1179,6 @@
     ];
 
 
-    // I18N DICTIONARY
     const i18n = {
       en: {
         tagline: "One private companion for every stage of a woman’s health",
@@ -1338,10 +1221,6 @@
       }
     };
 
-
-    // =========================================================================
-    // INITIALIZATION & SWITCHERS
-    // =========================================================================
     window.onload = function() {
       renderEpds();
       renderCycleExtras();
@@ -1442,10 +1321,6 @@
     function openPMDDModal() { document.getElementById('modal-pmdd').classList.remove('hidden'); }
     function closePMDDModal() { document.getElementById('modal-pmdd').classList.add('hidden'); }
 
-
-    // =========================================================================
-    // ASK SAKHI ENGINE
-    // =========================================================================
     function renderWelcomeChatMessage() {
       const chatBox = document.getElementById('chat-messages');
       let msg = "Namaste! I am <strong>Sakhi</strong>, your private health companion. I answer questions on periods, pregnancy, contraception, mental health, and menopause using official WHO and ICMR guidelines.";
@@ -1637,9 +1512,6 @@
     }
 
 
-    // =========================================================================
-    // CYCLE & MIND (REAL 90-DAY RETENTION & DYNAMIC SUMMARY)
-    // =========================================================================
     function setDefaultDates() {
       let saved = null;
       try { saved = JSON.parse(localStorage.getItem('sakhi_cycle') || 'null'); } catch (e) {}
@@ -1740,7 +1612,7 @@
 
       let logs = JSON.parse(localStorage.getItem('sakhi_90day_logs') || '[]');
       
-      // Filter out older than 90 days
+    
       const ninetyDaysAgo = Date.now() - (90 * 24 * 60 * 60 * 1000);
       logs = logs.filter(l => l.timestamp >= ninetyDaysAgo);
       
